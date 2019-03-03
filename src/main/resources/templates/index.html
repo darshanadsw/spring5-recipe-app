@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>My Recipes</title>
 </head>
 <body>
 <h1>My Recipes Index Page</h1>
+<table style="border: solid thin #000000">
+    <thead>
+    <tr style="border: solid thin #000000">
+        <th>ID</th>
+        <th>name</th>
+        <th>cooking time</th>
+        <th>description</th>
+        <th>direction</th>
+        <th>pre time</th>
+        <th>serving</th>
+        <th>source</th>
+        <th>url</th>
+        <th>notes</th>
+        <th>ingredients</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="recipe:${recipes}">
+        <td style="border: solid thin #000000" th:text="${recipe.id}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.description}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.cookTime}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.description}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.directions}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.prepTime}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.servings}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.source}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.url}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.notes.recipeNotes}"></td>
+        <td style="border: solid thin #000000" th:text="${recipe.ingredients}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
